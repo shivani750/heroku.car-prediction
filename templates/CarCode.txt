@@ -1,0 +1,18 @@
+<html>
+
+<body bgcolor ='#FFD7E9' text='black'>
+
+<font face "algerian" size=12 color="black">
+<center><h2> Car Price Prediction</h2></center>
+<br>
+</font>
+
+<p><h2><b>Model:<input type="int" name="Model"</b></h2></p><br>
+<p><h2><b>Body Color:<input type="String" name="Body Color"</b></h2></p><br>
+
+<p><h2><b>KiloMeter:<input type="number" name="km"</b></h2></p><br>
+<p><h2><b>Gearing Type:<input type="String" name="Gearing Type"</b></h2></p><br>
+<p><h2><b>price:<input type="int" name="price"</b></h2></p><br>
+<input type ="Submit">
+</body>
+</html>

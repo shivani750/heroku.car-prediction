@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Audi Price Predictor</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+	.btn{
+		background: #4f1a1a;
+		color: white;
+		width: 100%;
+	}
+	.fform{
+		background-color: rgb(270,270,270,.4);
+		padding: 40px 40px;
+		padding-bottom: 25px;
+		margin-top: 70px;
+		border-radius: 0px 0px 10px 10px;
+		text-align: center;
+		color: white;
+
+	}
+	.heading{
+		background-color:#4f1a1a;
+		padding: 10px;
+		color: white;
+		text-align: center;
+		border-radius: 10px 10px 0px 0px;
+	}
+	.back {
+		top: 50%;
+		left: 50%;
+		position: absolute;
+		margin: 0;
+		-ms-transform: translate(-50%, -50%);
+  		transform: translate(-50%, -50%);
+	}
+	.top{
+		box-shadow: 0px 0px 5px white;
+		padding: 0px;
+		border-radius: 10px; 
+	}
+	
+</style>
+</head>
+<body style="background-image:linear-gradient(rgb(0,0,0,.7),rgb(0,0,0,.7)), url('https://images.unsplash.com/photo-1564343003979-e531807e5b6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1470&q=80'); background-repeat: no-repeat; background-size: 100% 100%; background-attachment: fixed;">
+	<div class="col-lg-14 back">
+		<div class="container">
+			<div class="col-lg-6 col-lg-offset-3 top">
+				<div class="col-lg-12 heading">
+					<h3><b>Audi Price Predictor</b></h3>
+				</div>
+				<form class="form fform" action="http://127.0.0.1:5000/prediction" method="post">
+
+					<div class="form-group">
+						<input type="number" name="km" placeholder="Enter kms driven" class="form-control" step=0.0001>
+					</div>
+
+					<div class="form-group">
+						<input type="number" name="hp" placeholder="Enter horsepower" class="form-control" step=0.0001>
+					</div>
+
+					<div class="form-group">
+						<b>Model: </b> &nbsp;
+						<input type="radio" name="model" value=0> A1 &nbsp;
+						<input type="radio" name="model" value=1> A2 &nbsp;
+						<input type="radio" name="model" value=2> A3 &nbsp;
+					</div>
+
+					<div class="form-group">
+						<b>Gearing Type: </b> &nbsp;
+						<input type="radio" name="gearing type" value=0> Automatic &nbsp;
+						<input type="radio" name="gearing type" value=1> Manual &nbsp;
+						<input type="radio" name="gearing type" value=2> Semi-automatic &nbsp;
+					</div>
+
+					<div class="form-group">
+						<b>Body Type: </b> &nbsp;
+						<input type="radio" name="body type" value=0> Sedans &nbsp;
+						<input type="radio" name="body type" value=1> Station Wagon &nbsp;
+						<input type="radio" name="body type" value=2> Compact &nbsp;
+						<input type="radio" name="body type" value=3> Coupe &nbsp;
+						<input type="radio" name="body type" value=4> Other &nbsp;
+						<input type="radio" name="body type" value=5> Off-Road &nbsp;
+						<input type="radio" name="body type" value=6> Convertible &nbsp;
+					</div>
+
+					<!-- <div class="form-group">
+						<b>Body Color: </b> &nbsp;
+						<input type="radio" name="body colour" value=0> Black &nbsp;
+						<input type="radio" name="body colour" value=1> Red &nbsp;
+						<input type="radio" name="body colour" value=2> Brown &nbsp;
+						<input type="radio" name="body colour" value=3> White &nbsp;
+						<input type="radio" name="body colour" value=4> Grey &nbsp;
+						<input type="radio" name="body colour" value=5> Blue &nbsp;
+						<input type="radio" name="body colour" value=6> Silver &nbsp;
+						<input type="radio" name="body colour" value=7> Beige &nbsp;
+						<input type="radio" name="body colour" value=8> Violet &nbsp;
+						<input type="radio" name="body colour" value=9> Yellow &nbsp;
+						<input type="radio" name="body colour" value=10> Green &nbsp;
+						<input type="radio" name="body colour" value=11> Bronze &nbsp;
+						<input type="radio" name="body colour" value=12> Orange &nbsp;
+					</div> -->
+
+					<div class="form-group">
+						<input type="submit" name="submit" value="Predict Price" class="btn btn-md">
+					</div>
+
+					<div class="form-group">
+						<b>Predicted Price: </b> {{ output }}
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
